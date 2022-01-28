@@ -50,6 +50,6 @@ process.on("unhandledRejection", (reason, promise) => {
 
 client.login(BOT_TOKEN).then(() => {
   console.log(
-    ` Connexion réussie en: ${client.user.username}#${client.user.discriminator} `
+    `Connexion réussie en: ${client.user.tag}`
   );
 });
