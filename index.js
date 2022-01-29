@@ -1,5 +1,13 @@
+const fs = require("fs");
+
 const { Client, Collection, Intents, MessageEmbed } = require("discord.js");
-const { BOT_TOKEN, ERROR_LOGS_CHANNEL } = require("./config.json");
+const {
+  BOT_TOKEN,
+  ERROR_LOGS_CHANNEL,
+} = require("./config.json");
+const { loadCommands } = require("./handler/loadCommands");
+const { loadEvents } = require("./handler/loadEvents");
+const { loadSlashCommands } = require("./handler/loadSlashCommands");
 
 const client = new Client({
   allowedMentions: {
@@ -17,6 +25,17 @@ const client = new Client({
     Intents.FLAGS.GUILD_PRESENCES,
   ],
 });
+
+client.commands = new Collection();
+client.slash = new Collection();
+client.aliases = new Collection();
+client.categories = fs.readdirSync("./Commands/");
+client.setMaxListeners(0);
+
+
+loadCommands(client);
+loadEvents(client);
+loadSlashCommands(client);
 
 process.on("uncaughtException", (err) => {
   console.log("Uncaught Exception: " + err);
@@ -43,13 +62,11 @@ process.on("unhandledRejection", (reason, promise) => {
     .addField("Promise", `${promise}`)
     .addField("Reason", `${reason.message}`)
     .setColor("RED");
-  client.channels.cache.get(ERROR_LOGS_CHANNEL).send({
+/*   client.channels.cache.get(ERROR_LOGS_CHANNEL).send({
     embeds: [rejectionembed],
   });
-});
+ */});
 
 client.login(BOT_TOKEN).then(() => {
-  console.log(
-    `Connexion réussie en: ${client.user.tag}`
-  );
+  console.log(` Connexion réussie en: ${client.user.tag}`);
 });
