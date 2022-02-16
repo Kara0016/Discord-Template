@@ -1,2 +1,2 @@
-# Bot-communautaire
-Faire un fork du projet pour proposer des pull request
+# Discord.js v13 template
+
