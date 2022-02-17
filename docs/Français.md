@@ -12,10 +12,10 @@ Par la suite rendez-vous dans un terminal et tapez la commande `npm i` ce qui in
 
 Il ne vous reste plus qu'à éditer le fichier config.json avec vos information:
 
-OWNER_ID = L'identifiant du propriétaire du bot (vous le trouvez en faisant un clic droit sur un utilisateur)
-BOT_TOKEN = Le token de votre bot. Il se trouve dans le portail dévelopeurs.
-DEFAULT_PREFIX = Le préfix par défaut de votre bot.
-ERROR_LOGS_CHANNEL = L'identifiant du salon dans lequel vous voulez envoyer les erreurs liées au bot.
+**OWNER_ID:** L'identifiant du propriétaire du bot (vous le trouvez en faisant un clic droit sur un utilisateur)<br/>
+**BOT_TOKEN:** Le token de votre bot. Il se trouve dans le portail dévelopeurs.<br/>
+**DEFAULT_PREFIX:** Le préfix par défaut de votre bot.<br/>
+**ERROR_LOGS_CHANNEL:** L'identifiant du salon dans lequel vous voulez envoyer les erreurs liées au bot.
 
 ## Et après ?
 
@@ -25,7 +25,7 @@ Pour ce qui est des évênements vous devrez commencer par les créer dans `hand
 
 ## Support & Contribution
 
-Si vous rencontrez un soucis n'hésitez pas à demander conseil sur Github ou sur mon [serveur support](discord.gg/6qzkefevrb).
+Si vous rencontrez un soucis n'hésitez pas à demander conseil sur Github ou sur mon [serveur support](discord.gg/6qzkefevrb).<br/>
 Si vous voulez contribuer à ce projet ouvrez une pull request.
 
 ## Droits d'utilisation 
